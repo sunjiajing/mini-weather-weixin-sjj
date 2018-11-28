@@ -26,6 +26,7 @@ class Register extends Controller
     		$this->error('该用户名已经存在！请输入其它用户名');
     	}
       
+         //验证两次输入密码是否一致    
     	if($param['r_user_pwd'] != $param['r_user_rpwd']){
     		$this->error('两次输入密码不一致！');
     	}
@@ -38,6 +39,5 @@ class Register extends Controller
         }else{
             $this->error('注册失败！');
         }
-    	$this->redirect(url('login/index'));
     }
 }
